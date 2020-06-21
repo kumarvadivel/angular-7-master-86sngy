@@ -9,6 +9,7 @@ import { Http , Response } from '@angular/http';
 })
 export class WeatherComponent implements OnInit {
   @Input() compno:any;
+  
   weathertoggler:boolean=false;
   iconlink
   searchtext:string="search";
@@ -32,10 +33,22 @@ export class WeatherComponent implements OnInit {
     
   }
   constructor(private  http: Http) { 
-    console.log(localStorage.getItem(localStorage.key(this.compno)))
+    console.log(this.compno)
+    //console.log('hdfhfd',localStorage.getItem(localStorage.key(this.compno)))
   }
 
   ngOnInit() {
+    console.log(this.compno)
+    console.log('hdfhfd',localStorage.getItem(localStorage.key(this.compno+1)))
+    if(JSON.parse(localStorage.getItem(localStorage.key(this.compno+1)))){
+      this.weatherdata=JSON.parse(localStorage.getItem(localStorage.key(this.compno+1)))
+      this.searchtext=this.weatherdata.name;
+    }
+    else{
+      this.weatherdata={"coord":{"lon":"N/A","lat":"N/A"},"weather":[{"id":"N/A","main":"N/A","description":"N/A","icon":null}],"base":"N/A","main":{"temp":"N/A","feels_like":"N/A","temp_min":"N/A","temp_max":"N/A","pressure":"N/A","humidity":0},"visibility":0,"wind":{"speed":"N/A","deg":"N/A"},"clouds":{"all":"N/A"},"dt":"N/A","sys":{"type":"N/A","id":"N/A","country":"N/A","sunrise":"N/A","sunset":"N/A"},"timezone":"N/A","id":"N/A","name":"N/A","cod":225}
+  ;
+    }
+    
   }
   ngOnDestroy(){
     
