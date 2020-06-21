@@ -24,7 +24,8 @@ export class WeatherComponent implements OnInit {
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+this.searchtext+'&appid=ff1bc4683fc7325e9c57e586c20cc03e')
     .then(response=>response.json())
     .then(data=>{this.weatherdata=data
-    localStorage.setItem(this.searchtext,JSON.stringify(this.weatherdata))})
+    localStorage.setItem(this.searchtext,JSON.stringify(this.weatherdata))
+    })
     //this.weathertoggler=true;
    
     
@@ -34,6 +35,7 @@ export class WeatherComponent implements OnInit {
   ngOnInit() {
   }
   ngOnDestroy(){
+    
    
   }
 
