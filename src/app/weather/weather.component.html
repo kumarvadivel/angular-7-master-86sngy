@@ -4,7 +4,7 @@
   <div class="card-body">
     <h5 class="card-title" *ngIf="!weathertoggler" (click)="toggler()">{{searchtext}}</h5>
     <input type='text' placeholder="enter a search text " *ngIf="weathertoggler" (keyup.enter)="searchweather($event)"/>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">Temperature:{{(weatherdata.main.temp - 273.15).toFixed(0)}}°C Feelslike:{{(weatherdata.main.feels_like - 273.15).toFixed(0)}}</p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Cras justo odio</li>
