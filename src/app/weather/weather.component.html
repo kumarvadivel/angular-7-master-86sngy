@@ -1,5 +1,5 @@
 <div class="container">
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem;" >
   
   <div class="card-body">
     <h5 class="card-title" *ngIf="!weathertoggler" (click)="toggler()">{{searchtext}}</h5>
@@ -12,6 +12,6 @@
     <li class="list-group-item"><b>Humidity</b>:{{weatherdata.main.humidity}}%</li>
     <li class="list-group-item"><b>Cloudiness</b>:{{weatherdata.weather[0].description}}</li>
   </ul>
-  
+
 </div>
 </div>
