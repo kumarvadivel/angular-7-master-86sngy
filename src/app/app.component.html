@@ -21,13 +21,6 @@
   </div>
 </nav>
 <div class="container">
-  <app-weather></app-weather>
-  <app-weather></app-weather>
-  <app-weather></app-weather>
-  <app-weather></app-weather>
-  <app-weather></app-weather>
-  <app-weather></app-weather>
-  <app-weather></app-weather>
-  <app-weather></app-weather>
-  <app-weather></app-weather>
+  <app-weather *ngFor="let no in compno" [compno]="no"></app-weather>
+
 </div>

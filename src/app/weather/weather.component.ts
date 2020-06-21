@@ -1,4 +1,4 @@
-import { Component, OnInit ,OnDestroy} from '@angular/core';
+import { Component, OnInit ,OnDestroy,Input} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Http , Response } from '@angular/http';
 
@@ -8,6 +8,7 @@ import { Http , Response } from '@angular/http';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit {
+  @Input() compno:any;
   weathertoggler:boolean=false;
   iconlink
   searchtext:string="search";
@@ -30,7 +31,9 @@ export class WeatherComponent implements OnInit {
    
     
   }
-  constructor(private  http: Http) { }
+  constructor(private  http: Http) { 
+    console.log(localStorage.getItem(localStorage.key(this.compno)))
+  }
 
   ngOnInit() {
   }
