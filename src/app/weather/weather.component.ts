@@ -15,14 +15,20 @@ export class WeatherComponent implements OnInit {
   searchweather($event){
     this.searchtext=event.target.value;
     this.weathertoggler=false;
-    let link="http://api.openweathermap.org/data/2.5/weather?q="+this.searchtext+"&APPID=5269c981512a19f891f0f5fcaaed64ba"
-    let httpclient:HttpClient;
-   fetch(link).then(data=>{
-     console.log(data)
-   })
-
+    
+    this.httpClient.get("http://api.openweathermap.org/data/2.5/weather?q="+this.searchtext+"&APPID=5269c981512a19f891f0f5fcaaed64ba")
+    .subscribe(
+      (res: Response) => 
+        {
+          const searchResult = res.json();  
+          console.log(searchResult);
+          
+          //console.log(this.imageSearch.owner.avatar_url);
+        }
+    );
+    
   }
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
 
   ngOnInit() {
   }
