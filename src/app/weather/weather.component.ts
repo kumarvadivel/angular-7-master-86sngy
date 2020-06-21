@@ -11,7 +11,7 @@ export class WeatherComponent implements OnInit {
   weathertoggler:boolean=false;
   searchtext:string="search";
   weatherdata:object=
-    {"coord":{"lon":"N/A","lat":"N/A"},"weather":[{"id":"N/A","main":"N/A","description":"N/A","icon":"N/A"}],"base":"N/A","main":{"temp":"N/A","feels_like":"N/A","temp_min":"N/A","temp_max":"N/A","pressure":"N/A","humidity":0},"visibility":0,"wind":{"speed":"N/A","deg":"N/A"},"clouds":{"all":"N/A"},"dt":"N/A","sys":{"type":"N/A","id":"N/A","country":"N/A","sunrise":"N/A","sunset":"N/A"},"timezone":"N/A","id":"N/A","name":"N/A","cod":"N/A"}
+    {"coord":{"lon":"N/A","lat":"N/A"},"weather":[{"id":"N/A","main":"N/A","description":"N/A","icon":"N/A"}],"base":"N/A","main":{"temp":"N/A","feels_like":"N/A","temp_min":"N/A","temp_max":"N/A","pressure":"N/A","humidity":0},"visibility":0,"wind":{"speed":"N/A","deg":"N/A"},"clouds":{"all":"N/A"},"dt":"N/A","sys":{"type":"N/A","id":"N/A","country":"N/A","sunrise":"N/A","sunset":"N/A"},"timezone":"N/A","id":"N/A","name":"N/A","cod":225}
   ;
   toggler(){
     this.weathertoggler=true;

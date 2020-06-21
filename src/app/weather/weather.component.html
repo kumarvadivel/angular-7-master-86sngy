@@ -1,5 +1,5 @@
 <div class="container">
-<div class="card" style="width: 18rem;" >
+<div class="card" style="width: 18rem;" *ngIf="weatherdata.cod==225 || weatherdata.cod==200">
   
   <div class="card-body">
     <h5 class="card-title" *ngIf="!weathertoggler" (click)="toggler()">{{searchtext}}</h5>
@@ -11,6 +11,24 @@
     <li class="list-group-item"><b>max/min:</b>{{(weatherdata.main.temp_max - 273.15).toFixed(0)}}°C/{{(weatherdata.main.temp_min - 273.15).toFixed(0)}}°C</li>
     <li class="list-group-item"><b>Humidity</b>:{{weatherdata.main.humidity}}%</li>
     <li class="list-group-item"><b>Cloudiness</b>:{{weatherdata.weather[0].description}}</li>
+  </ul>
+
+</div>
+<div class="card" style="width: 18rem;" *ngIf="weatherdata.cod==404">
+  
+  <div class="card-body">
+    <h5 class="card-title" *ngIf="!weathertoggler" (click)="toggler()">{{searchtext}}</h5>
+    <input type='text' placeholder="enter a search text " *ngIf="weathertoggler" (keyup.enter)="searchweather($event)"/>
+    <div class="alert alert-danger" role="alert">
+  {{weatherdata.message}}
+</div>
+    <p class="card-text"><b>Temperature:</b>N/A°C <br>
+    <b>Feelslike:</b>N/A°C</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><b>max/min:</b>N/A°C/N/A°C</li>
+    <li class="list-group-item"><b>Humidity</b>:N/A%</li>
+    <li class="list-group-item"><b>Cloudiness</b>:N/A</li>
   </ul>
 
 </div>
