@@ -27,7 +27,7 @@ export class WeatherComponent implements OnInit,OnChanges {
       fetch('https://api.openweathermap.org/data/2.5/weather?q='+this.searchtext+'&appid=ff1bc4683fc7325e9c57e586c20cc03e')
     .then(response=>response.json())
     .then(data=>{this.weatherdata=data
-    console.log(data)
+    //console.log(data)
     localStorage.setItem(this.searchtext,JSON.stringify(this.weatherdata))
     })},3000)
     //this.weathertoggler=true;
