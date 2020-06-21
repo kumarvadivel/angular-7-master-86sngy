@@ -2,7 +2,9 @@
 <div class="card" style="width: 18rem;" *ngIf="weatherdata.cod==225 || weatherdata.cod==200">
   
   <div class="card-body">
+    <img class="icon" src="https://openweathermap.org/img/wn/{{weatherdata.weather[0].icon}}@2x.png" *ngIf="weatherdata.weather[0].icon" class="card-img-top" alt="weatherdata.weather[0].icon">
     <h5 class="card-title" *ngIf="!weathertoggler" (click)="toggler()">{{searchtext}}</h5>
+
     <input type='text' placeholder="enter a search text " *ngIf="weathertoggler" (keyup.enter)="searchweather($event)"/>
     <p class="card-text"><b>Temperature:</b>{{(weatherdata.main.temp - 273.15).toFixed(0)}}°C <br>
     <b>Feelslike:</b>{{(weatherdata.main.feels_like - 273.15).toFixed(0)}}°C</p>
