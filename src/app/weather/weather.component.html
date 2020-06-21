@@ -4,12 +4,13 @@
   <div class="card-body">
     <h5 class="card-title" *ngIf="!weathertoggler" (click)="toggler()">{{searchtext}}</h5>
     <input type='text' placeholder="enter a search text " *ngIf="weathertoggler" (keyup.enter)="searchweather($event)"/>
-    <p class="card-text">Temperature:{{(weatherdata.main.temp - 273.15).toFixed(0)}}°C Feelslike:{{(weatherdata.main.feels_like - 273.15).toFixed(0)}}</p>
+    <p class="card-text"><b>Temperature:</b>{{(weatherdata.main.temp - 273.15).toFixed(0)}}°C <br>
+    <b>Feelslike:</b>{{(weatherdata.main.feels_like - 273.15).toFixed(0)}}°C</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
+    <li class="list-group-item"><b>max/min:</b>{{(weatherdata.main.temp_max - 273.15).toFixed(0)}}°C/{{(weatherdata.main.temp_min - 273.15).toFixed(0)}}°C</li>
+    <li class="list-group-item"><b>Humidity</b>:{{weatherdata.main.humidity}}%</li>
+    <li class="list-group-item"><b>Cloudiness</b>:{{weatherdata.weather[0].description}}</li>
   </ul>
   <div class="card-body">
     <a href="#" class="card-link">Card link</a>
